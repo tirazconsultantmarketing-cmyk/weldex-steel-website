@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90">
+  <g fill="none" stroke="#ef2029" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M8 26 L38 9 L96 23 L96 64"/>
+    <path d="M98 23 L147 31 L147 64" opacity=".72"/>
+    <path d="M149 31 L197 40 L197 64" opacity=".46"/>
+  </g>
+  <path d="M17 30 L31 67 L46 30 L59 67 L73 30" fill="none" stroke="#ef2029" stroke-width="10" stroke-linejoin="miter"/>
+  <text x="91" y="69" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-1">WELDEX</text>
+  <text x="246" y="69" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#ef2029">Steel</text>
+</svg>
