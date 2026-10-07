@@ -1,3 +1,12 @@
+/* =========================================================
+   WELDEX OFFICIAL BRAND TYPOGRAPHY
+   English: DIN Next W1G
+   Arabic: Cairo SemiBold
+   ========================================================= */
+@font-face{font-family:"Weldex DIN";src:url("../fonts/DINNextW1G-Regular.otf") format("opentype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Weldex DIN";src:url("../fonts/DINNextW1G-Heavy.otf") format("opentype");font-style:normal;font-weight:700 950;font-display:swap}
+@font-face{font-family:"Weldex Cairo";src:url("../fonts/Cairo-SemiBold_0.ttf") format("truetype");font-style:normal;font-weight:600 900;font-display:swap}
+
 :root{
   --bg:#0b0d10;--bg-2:#111419;--panel:#171b20;--panel-2:#1e2329;
   --text:#f4f6f8;--muted:#a9b0ba;--line:rgba(255,255,255,.10);
@@ -5,7 +14,7 @@
   --max:1220px;--radius:18px;--ease:cubic-bezier(.2,.8,.2,1);
   --shadow:0 22px 70px rgba(0,0,0,.34);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Weldex DIN",Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),rgba(239,32,41,.055),transparent 44%)}
 a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,input,textarea,select{font:inherit}.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.18em;font-size:.73rem;font-weight:800;color:#d4d9df}.eyebrow::before{content:"";width:34px;height:3px;background:var(--red);display:inline-block}
@@ -56,7 +65,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,inp
 @media(max-width:720px){.container{width:min(100% - 28px,var(--max))}.section{padding:70px 0}.section-head{display:block}.hero{min-height:auto;padding:145px 0 55px}.hero h1{font-size:clamp(3.2rem,17vw,5.6rem)}.hero-stats{grid-template-columns:1fr}.hero-stat{border-right:0;border-bottom:1px solid var(--line)}.hero-stat:last-child{border-bottom:0}.services-grid,.project-side,.stats-grid,.value-grid,.trust-icons,.mission-grid,.projects-archive,.principles,.org-grid,.form-grid{grid-template-columns:1fr}.value-item{border-right:0}.stats-grid .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.22)}.project-feature{min-height:470px}.mini-project{grid-template-columns:105px 1fr}.mini-project img{width:105px;height:90px}.trust-media img{height:430px}.trust-media .badge{right:10px;width:140px;height:140px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.story-grid,.service-detail{grid-template-columns:1fr;gap:20px}.job{grid-template-columns:1fr}.cursor-dot,.cursor-ring{display:none}.inner-hero{min-height:50vh}.inner-hero h1{font-size:clamp(3rem,15vw,5rem)}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.reveal,.reveal-left,.reveal-right{opacity:1;transform:none}}
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;height:38px;min-width:48px;padding:0 10px;border:1px solid rgba(255,255,255,.22);font-size:.72rem;font-weight:900;transition:.2s}.lang-switch:hover{border-color:var(--red);background:var(--red)}
-html[dir="rtl"] body{font-family:Tahoma,Arial,sans-serif}.inner-hero h1,html[dir="rtl"] .section-title,html[dir="rtl"] .hero h1,html[dir="rtl"] .big-quote{letter-spacing:-.025em}.inner-hero h1 span{color:var(--red)}
+html[dir="rtl"] body{font-family:"Weldex Cairo",Arial,sans-serif}.inner-hero h1,html[dir="rtl"] .section-title,html[dir="rtl"] .hero h1,html[dir="rtl"] .big-quote{letter-spacing:-.025em}.inner-hero h1 span{color:var(--red)}
 html[dir="rtl"] .eyebrow{letter-spacing:.06em}html[dir="rtl"] .eyebrow::before{order:2}html[dir="rtl"] .nav-links{margin-left:0;margin-right:auto}html[dir="rtl"] .nav-cta{margin-right:8px;margin-left:0}html[dir="rtl"] .hero-media::after{background:linear-gradient(270deg,rgba(6,7,9,.96) 0%,rgba(6,7,9,.79) 34%,rgba(6,7,9,.25) 67%,rgba(6,7,9,.66) 100%),linear-gradient(0deg,#0b0d10 0%,transparent 28%)}html[dir="rtl"] .hero-stats{right:auto;left:0}html[dir="rtl"] .btn-link::after{content:"←"}html[dir="rtl"] .mini-project:hover{transform:translateX(-8px)}html[dir="rtl"] .service-card .num{right:auto;left:24px}html[dir="rtl"] .trust-media .badge{right:auto;left:-24px}html[dir="rtl"] .map-panel::before{left:auto;right:20px}html[dir="rtl"] .notice{border-left:0;border-right:4px solid var(--red)}
 @media(max-width:1050px){.lang-switch{margin-left:auto}.menu-btn{margin-left:0}html[dir="rtl"] .lang-switch{margin-left:0;margin-right:auto}}
 @media(max-width:720px){html[dir="rtl"] .trust-media .badge{left:10px}}
@@ -709,3 +718,10 @@ html[dir="rtl"] .contact-card,html[dir="rtl"] .form-card{min-width:0}
     margin:0 0 26px 34px;
   }
 }
+
+
+/* Brand font consistency overrides */
+html:not([dir="rtl"]) body,html:not([dir="rtl"]) button,html:not([dir="rtl"]) input,html:not([dir="rtl"]) textarea,html:not([dir="rtl"]) select{font-family:"Weldex DIN",Arial,Helvetica,sans-serif}
+html[dir="rtl"] body,html[dir="rtl"] button,html[dir="rtl"] input,html[dir="rtl"] textarea,html[dir="rtl"] select{font-family:"Weldex Cairo",Arial,sans-serif}
+html:not([dir="rtl"]) h1,html:not([dir="rtl"]) h2,html:not([dir="rtl"]) h3,html:not([dir="rtl"]) h4,html:not([dir="rtl"]) h5,html:not([dir="rtl"]) h6,html:not([dir="rtl"]) .btn,html:not([dir="rtl"]) .nav-links a,html:not([dir="rtl"]) .eyebrow{font-family:"Weldex DIN",Arial,Helvetica,sans-serif;font-weight:900}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html[dir="rtl"] h5,html[dir="rtl"] h6,html[dir="rtl"] .btn,html[dir="rtl"] .nav-links a,html[dir="rtl"] .eyebrow{font-family:"Weldex Cairo",Arial,sans-serif;font-weight:700}

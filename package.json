@@ -1,0 +1,25 @@
+{
+  "name": "weldex-steel-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tirazconsultantmarketing-cmyk/weldex-steel-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tirazconsultantmarketing-cmyk/weldex-steel-website/issues"
+  },
+  "homepage": "https://github.com/tirazconsultantmarketing-cmyk/weldex-steel-website#readme",
+  "dependencies": {
+    "formidable": "^3.5.4",
+    "nodemailer": "^10.0.15"
+  }
+}
