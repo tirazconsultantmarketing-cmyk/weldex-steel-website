@@ -96,7 +96,7 @@ module.exports = async function handler(req, res) {
 
     return res.status(500).json({
       success: false,
-      message: "Unable to send application."
+      message: error.message || "Unable to send application."
     });
   }
 };
