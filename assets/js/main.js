@@ -292,8 +292,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         status.textContent =
           document.documentElement.lang === "ar"
-            ? "تعذر إرسال طلب التوظيف حاليًا. يرجى المحاولة مرة أخرى."
-            : "We couldn't send your application. Please try again.";
+            ? `خطأ: ${err.message}`
+            : `Error: ${err.message}`;
 
         status.className = "form-status error show";
 
