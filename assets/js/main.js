@@ -292,8 +292,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         status.textContent =
           document.documentElement.lang === "ar"
-            ? `خطأ: ${err.message}`
-            : `Error: ${err.message}`;
+            ? "تعذر إرسال طلب التوظيف. تأكد من رفع ملف CV صالح ثم حاول مرة أخرى."
+            : "We couldn't send your application. Please upload a valid CV and try again.";
 
         status.className = "form-status error show";
 
