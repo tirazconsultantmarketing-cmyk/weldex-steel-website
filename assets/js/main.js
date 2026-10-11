@@ -127,3 +127,79 @@ document.querySelectorAll('.file-drop input[type="file"]').forEach(inp=>inp.addE
   const strong=inp.closest('.file-drop')?.querySelector('strong');
   if(strong && inp.files?.[0]) strong.textContent=inp.files[0].name;
 }));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForms = document.querySelectorAll('form.form-card');
+
+  contactForms.forEach((form) => {
+    const isContactPage =
+      window.location.pathname.endsWith("/contact.html") ||
+      window.location.pathname.endsWith("/ar/contact.html");
+
+    if (!isContactPage) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : "";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = document.documentElement.lang === "ar"
+          ? "جارٍ الإرسال..."
+          : "Sending...";
+      }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch("https://weldex-steel-website-pi.vercel.app/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: data.name || "",
+            company: data.company || "",
+            email: data.email || "",
+            phone: data.phone || "",
+            service: data.service || "",
+            location: data.location || "",
+            message: [
+              data.message || "",
+              data.service ? `Service: ${data.service}` : "",
+              data.location ? `Project Location: ${data.location}` : ""
+            ].filter(Boolean).join("\n\n")
+          })
+        });
+
+        const result = await res.json();
+
+        if (!res.ok || !result.success) {
+          throw new Error(result.message || "Failed to send.");
+        }
+
+        alert(
+          document.documentElement.lang === "ar"
+            ? "تم إرسال طلبك بنجاح."
+            : "Your request has been sent successfully."
+        );
+
+        form.reset();
+
+      } catch (err) {
+        alert(
+          document.documentElement.lang === "ar"
+            ? "حدث خطأ أثناء الإرسال. حاول مرة أخرى."
+            : "Something went wrong. Please try again."
+        );
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }
+    });
+  });
+});
