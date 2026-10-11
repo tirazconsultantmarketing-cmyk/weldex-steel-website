@@ -180,20 +180,43 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error(result.message || "Failed to send.");
         }
 
-        alert(
-          document.documentElement.lang === "ar"
-            ? "تم إرسال طلبك بنجاح."
-            : "Your request has been sent successfully."
-        );
+        let status = form.querySelector(".form-status");
+        if (!status) {
+          status = document.createElement("div");
+          status.className = "form-status success";
+          form.appendChild(status);
+        }
 
+        status.textContent =
+          document.documentElement.lang === "ar"
+            ? "تم إرسال طلبك بنجاح. سيتواصل معك فريق WELDEX قريبًا."
+            : "Your request was sent successfully. The WELDEX team will contact you shortly.";
+
+        status.className = "form-status success show";
         form.reset();
 
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 5000);
+
       } catch (err) {
-        alert(
+        let status = form.querySelector(".form-status");
+        if (!status) {
+          status = document.createElement("div");
+          status.className = "form-status error";
+          form.appendChild(status);
+        }
+
+        status.textContent =
           document.documentElement.lang === "ar"
-            ? "حدث خطأ أثناء الإرسال. حاول مرة أخرى."
-            : "Something went wrong. Please try again."
-        );
+            ? "تعذر إرسال الطلب حاليًا. يرجى المحاولة مرة أخرى."
+            : "We couldn't send your request. Please try again.";
+
+        status.className = "form-status error show";
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 5000);
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
