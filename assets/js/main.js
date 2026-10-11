@@ -226,3 +226,87 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const careerForms = document.querySelectorAll('form.career-form');
+
+  careerForms.forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : "";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent =
+          document.documentElement.lang === "ar"
+            ? "جارٍ الإرسال..."
+            : "Sending...";
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(
+          "https://weldex-steel-website-pi.vercel.app/api/careers",
+          {
+            method: "POST",
+            body: formData
+          }
+        );
+
+        const result = await res.json();
+
+        if (!res.ok || !result.success) {
+          throw new Error(result.message || "Failed to send application.");
+        }
+
+        let status = form.querySelector(".form-status");
+
+        if (!status) {
+          status = document.createElement("div");
+          form.appendChild(status);
+        }
+
+        status.textContent =
+          document.documentElement.lang === "ar"
+            ? "تم إرسال طلب التوظيف بنجاح. سيقوم فريق WELDEX بمراجعة طلبك."
+            : "Your application was sent successfully. The WELDEX team will review it.";
+
+        status.className = "form-status success show";
+
+        form.reset();
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 5000);
+
+      } catch (err) {
+        let status = form.querySelector(".form-status");
+
+        if (!status) {
+          status = document.createElement("div");
+          form.appendChild(status);
+        }
+
+        status.textContent =
+          document.documentElement.lang === "ar"
+            ? "تعذر إرسال طلب التوظيف حاليًا. يرجى المحاولة مرة أخرى."
+            : "We couldn't send your application. Please try again.";
+
+        status.className = "form-status error show";
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 5000);
+
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }
+    });
+  });
+});
