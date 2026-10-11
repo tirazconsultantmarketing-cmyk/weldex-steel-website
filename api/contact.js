@@ -37,9 +37,10 @@ module.exports = async function handler(req, res) {
       from: `"Weldex Website" <${process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO || "info@weldexsteel.com",
       replyTo: email,
-      subject: `New Weldex Website Inquiry - ${name}`,
+      subject: `[WELDEX CONTACT] New Website Inquiry - ${name}`,
       html: `
         <h2>New Website Inquiry</h2>
+        <p><strong>Source:</strong> Contact Form</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || "-"}</p>
