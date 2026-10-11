@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const formidable = require("formidable");
+const { formidable } = require("formidable");
 const fs = require("fs");
 
 module.exports = async function handler(req, res) {
