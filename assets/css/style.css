@@ -918,3 +918,107 @@ html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html
   color:#fff;
 }
 
+
+/* =========================================================
+   FIX — Projects light section + balanced header profile CTA
+   ========================================================= */
+
+/* PROJECTS SECTION — LIGHT */
+.project-showcase{
+  background:#fff !important;
+  color:#101318 !important;
+}
+
+.project-showcase .section-title{
+  color:#101318;
+}
+
+.project-showcase .section-title span{
+  color:var(--red);
+}
+
+.project-showcase .eyebrow{
+  color:#6f747b;
+}
+
+.project-showcase .btn-ghost{
+  color:#101318;
+  background:transparent;
+  border-color:#c8ccd1;
+}
+
+.project-showcase .btn-ghost:hover{
+  color:#fff;
+  background:#101318;
+  border-color:#101318;
+}
+
+/* Side project cards */
+.project-showcase .mini-project{
+  background:#f7f8f9;
+  border-color:#d9dde1;
+  color:#101318;
+}
+
+.project-showcase .mini-project h4{
+  color:#101318;
+}
+
+.project-showcase .mini-project p{
+  color:#656c74;
+}
+
+/* Map card */
+.project-showcase .map-panel{
+  background:#f5f6f7;
+  border-color:#d9dde1;
+}
+
+.project-showcase .map-panel::before{
+  color:#101318;
+}
+
+
+/* HEADER PROFILE BUTTON — balanced with quote button */
+.nav-profile{
+  min-height:54px !important;
+  height:54px;
+  padding:0 18px !important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  border:1px solid rgba(255,255,255,.45) !important;
+  background:rgba(10,12,15,.58) !important;
+  color:#fff !important;
+  font-size:.62rem !important;
+  line-height:1;
+  letter-spacing:.055em;
+  clip-path:polygon(
+    10px 0,
+    100% 0,
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+}
+
+.nav-profile:hover{
+  background:#fff !important;
+  color:#101318 !important;
+  border-color:#fff !important;
+  transform:translateY(-2px);
+}
+
+/* Keep both CTAs visually balanced */
+.nav-cta,
+.nav-profile{
+  flex-shrink:0;
+}
+
+@media(min-width:1051px){
+  .nav-profile{
+    margin-inline-start:6px;
+    max-width:190px;
+  }
+}
+
