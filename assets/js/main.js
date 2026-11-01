@@ -34,7 +34,7 @@ document.querySelectorAll('[data-lang-target]').forEach(link=>{
   link.addEventListener('click',()=>localStorage.setItem(LANG_KEY,link.dataset.langTarget));
 });
 const hdr=document.querySelector('.site-header');const mobile=document.querySelector('.mobile-nav');const menu=document.querySelector('.menu-btn');
-function navScroll(){hdr?.classList.toggle('scrolled',scrollY>25)}navScroll();addEventListener('scroll',navScroll,{passive:true});menu?.addEventListener('click',()=>mobile.classList.toggle('open'));mobile?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobile.classList.remove('open')));
+function navScroll(){hdr?.classList.toggle('scrolled',window.scrollY>80)}navScroll();addEventListener('scroll',navScroll,{passive:true});menu?.addEventListener('click',()=>mobile.classList.toggle('open'));mobile?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobile.classList.remove('open')));
 // reveal
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
 // counters
