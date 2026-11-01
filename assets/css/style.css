@@ -805,23 +805,21 @@ html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html
 }
 
 
-/* Home hero extends behind transparent fixed header */
-body:has(.hero) .hero{
-  margin-top:-84px;
-  padding-top:234px;
-  min-height:calc(100vh + 84px);
+/* Extend only hero background behind transparent header */
+.hero{
+  overflow:visible;
 }
 
-body:has(.hero) .site-header:not(.scrolled){
-  background:transparent !important;
-  border-bottom-color:transparent !important;
-  backdrop-filter:none !important;
-  -webkit-backdrop-filter:none !important;
+.hero-media,
+.hero-grid{
+  top:-84px;
+  height:calc(100% + 84px);
 }
 
-body:has(.hero) .site-header.scrolled{
-  background:rgba(8,10,12,.92) !important;
-  backdrop-filter:blur(16px) !important;
-  -webkit-backdrop-filter:blur(16px) !important;
+.hero-content,
+.hero-stats,
+.scroll-mark{
+  position:relative;
+  z-index:3;
 }
 
