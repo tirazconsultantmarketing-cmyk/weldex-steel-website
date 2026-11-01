@@ -823,3 +823,98 @@ html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html
   z-index:3;
 }
 
+
+
+/* WELDEX HOME SECTION COLORS + PROFILE HEADER BUTTON */
+
+/* Secondary Company Profile button */
+.nav-profile{
+  min-height:52px;
+  padding:0 17px;
+  border:1px solid rgba(255,255,255,.38);
+  background:rgba(8,10,12,.42);
+  color:#fff;
+  white-space:nowrap;
+  font-size:.66rem;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.nav-profile:hover{
+  background:#fff;
+  border-color:#fff;
+  color:#101318;
+  transform:translateY(-3px);
+}
+
+@media(min-width:1051px){
+  .nav-profile{
+    margin-inline-start:8px;
+  }
+}
+
+.mobile-nav .nav-profile{
+  width:min(100%,360px);
+  margin-inline:auto;
+}
+
+
+/* =========================================================
+   HOME PAGE — fixed black / white section rhythm
+   Hero      = Dark
+   Services  = Light
+   Value     = Dark
+   Projects  = Dark
+   Stats     = Red
+   Quality   = Light
+   Contact   = Dark
+   ========================================================= */
+
+/* HERO */
+.hero{
+  background:#0b0d10;
+  color:#fff;
+}
+
+/* ticker under hero */
+.hero + .ticker{
+  background:#0e1115;
+  color:#fff;
+}
+
+/* SERVICES — LIGHT */
+.hero + .ticker + .section.white{
+  background:#fff;
+  color:#101318;
+}
+
+/* VALUE ENGINEERING — DARK */
+.hero + .ticker + .section.white + .split{
+  background:#0f1216;
+  color:#fff;
+}
+
+/* PROJECTS — DARK */
+.project-showcase{
+  background:#0e1115;
+  color:#fff;
+}
+
+/* KPI BAND — RED */
+.project-showcase + .stats-band{
+  background:var(--red);
+  color:#fff;
+}
+
+/* QUALITY & SAFETY — LIGHT */
+.stats-band + .section.white{
+  background:#fff;
+  color:#101318;
+}
+
+/* CONTACT CTA — DARK */
+.cta{
+  background:#13161a;
+  color:#fff;
+}
+
