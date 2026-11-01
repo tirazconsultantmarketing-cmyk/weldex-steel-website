@@ -755,3 +755,39 @@ html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html
   border:1px solid rgba(220,53,69,.35);
   color:#dc3545;
 }
+
+/* Hero YouTube background */
+.hero-video{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+.hero-video iframe{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:177.77777778vh;
+  height:56.25vw;
+  min-width:100%;
+  min-height:100%;
+  transform:translate(-50%,-50%);
+  border:0;
+  pointer-events:none;
+}
+
+.hero-video::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  pointer-events:none;
+}
+
+.hero-content,
+.hero-stats,
+.scroll-mark{
+  position:relative;
+  z-index:2;
+}
+
