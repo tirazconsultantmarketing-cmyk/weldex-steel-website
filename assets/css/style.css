@@ -1670,3 +1670,16 @@ html[dir="rtl"] .client-ticker .client-logo-item::after{
   }
 }
 
+
+/* Restore original colors for logos 2 and 4 */
+.client-ticker .client-logo-item img[src$="/2.png"],
+.client-ticker .client-logo-item img[src$="/4.png"]{
+  filter:none !important;
+  opacity:1 !important;
+}
+
+.client-ticker .client-logo-item:hover img[src$="/2.png"],
+.client-ticker .client-logo-item:hover img[src$="/4.png"]{
+  filter:none !important;
+}
+
