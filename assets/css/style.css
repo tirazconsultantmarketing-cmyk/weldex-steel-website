@@ -1218,3 +1218,9 @@ html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html
   }
 }
 
+
+/* Match Arabic hero video darkness to English */
+html[dir="rtl"] .hero-media.hero-video::after{
+  background:rgba(0,0,0,.32) !important;
+}
+
