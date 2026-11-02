@@ -1611,3 +1611,62 @@ html[dir="rtl"] .client-ticker .client-logo-item::after{
   }
 }
 
+
+/* ===== CLIENT LOGOS — 35% BIGGER TEST ===== */
+
+.client-ticker{
+  height:78px !important;
+  min-height:78px !important;
+  max-height:78px !important;
+}
+
+.client-ticker .client-ticker-track{
+  height:78px !important;
+  min-height:78px !important;
+  max-height:78px !important;
+}
+
+.client-ticker .client-logo-item{
+  width:200px !important;
+  min-width:200px !important;
+  max-width:200px !important;
+  flex:0 0 200px !important;
+
+  height:78px !important;
+  min-height:78px !important;
+  max-height:78px !important;
+
+  padding:0 24px !important;
+}
+
+.client-ticker .client-logo-item img{
+  max-width:160px !important;
+  max-height:52px !important;
+}
+
+@media(max-width:720px){
+
+  .client-ticker,
+  .client-ticker .client-ticker-track{
+    height:68px !important;
+    min-height:68px !important;
+    max-height:68px !important;
+  }
+
+  .client-ticker .client-logo-item{
+    width:165px !important;
+    min-width:165px !important;
+    max-width:165px !important;
+    flex-basis:165px !important;
+
+    height:68px !important;
+    min-height:68px !important;
+    max-height:68px !important;
+  }
+
+  .client-ticker .client-logo-item img{
+    max-width:130px !important;
+    max-height:42px !important;
+  }
+}
+
