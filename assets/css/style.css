@@ -1511,3 +1511,103 @@ html[dir="rtl"] .client-ticker .client-logo-item::after{
   }
 }
 
+
+/* ===== CLIENT TICKER — WHITE LOGOS + SLIGHTLY BIGGER ===== */
+
+.client-ticker{
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+  padding:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+}
+
+.client-ticker .client-ticker-track{
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+  display:flex !important;
+  align-items:center !important;
+  width:max-content !important;
+  gap:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.client-ticker .client-logo-item{
+  width:165px !important;
+  min-width:165px !important;
+  max-width:165px !important;
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+  padding:0 24px !important;
+  margin:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  position:relative !important;
+  box-sizing:border-box !important;
+  flex:0 0 165px !important;
+}
+
+.client-ticker .client-logo-item img{
+  width:auto !important;
+  height:auto !important;
+  max-width:120px !important;
+  max-height:36px !important;
+  object-fit:contain !important;
+  display:block !important;
+  margin:0 !important;
+  padding:0 !important;
+  filter:brightness(0) invert(1) contrast(1.08) !important;
+  opacity:.95 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+
+.client-ticker .client-logo-item::after{
+  content:"◆" !important;
+  position:absolute !important;
+  right:-4px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  font-size:8px !important;
+  line-height:1 !important;
+  color:var(--red) !important;
+}
+
+html[dir="rtl"] .client-ticker .client-logo-item::after{
+  right:-4px !important;
+  left:auto !important;
+}
+
+@media(max-width:720px){
+  .client-ticker,
+  .client-ticker .client-ticker-track{
+    height:56px !important;
+    min-height:56px !important;
+    max-height:56px !important;
+  }
+
+  .client-ticker .client-logo-item{
+    width:135px !important;
+    min-width:135px !important;
+    max-width:135px !important;
+    height:56px !important;
+    min-height:56px !important;
+    max-height:56px !important;
+    flex-basis:135px !important;
+    padding:0 18px !important;
+  }
+
+  .client-ticker .client-logo-item img{
+    max-width:100px !important;
+    max-height:30px !important;
+  }
+}
+
