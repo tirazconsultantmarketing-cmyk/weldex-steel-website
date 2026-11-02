@@ -1121,3 +1121,100 @@ html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html
 
 }
 
+
+/* Local MP4 hero background */
+.hero-video{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+.hero-video video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+
+.hero-video::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.32);
+  pointer-events:none;
+}
+
+
+/* Final hero + header integration */
+.site-header{
+  background:transparent !important;
+  box-shadow:none !important;
+  border-bottom-color:transparent !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+.site-header.scrolled{
+  background:rgba(8,10,12,.94) !important;
+  box-shadow:0 8px 30px rgba(0,0,0,.18) !important;
+  border-bottom-color:rgba(255,255,255,.08) !important;
+  backdrop-filter:blur(16px) !important;
+  -webkit-backdrop-filter:blur(16px) !important;
+}
+
+/* Background reaches behind the fixed header */
+.hero-media.hero-video{
+  top:-78px !important;
+  height:calc(100% + 78px) !important;
+}
+
+/* Keep actual hero layout unchanged */
+.hero{
+  overflow:hidden !important;
+}
+
+/* Clean desktop header proportions */
+@media(min-width:1051px){
+  .site-header .nav{
+    height:78px;
+    gap:12px;
+  }
+
+  .site-header .brand{
+    width:150px;
+    flex-basis:150px;
+  }
+
+  .site-header .brand img{
+    max-width:150px;
+    height:50px;
+  }
+
+  .site-header .nav-links{
+    gap:18px;
+    flex:1;
+    justify-content:center;
+    margin:0 !important;
+  }
+
+  .site-header .nav-links a{
+    font-size:.62rem;
+    letter-spacing:.045em;
+  }
+
+  .site-header .lang-switch{
+    margin:0 4px !important;
+    flex-shrink:0;
+  }
+
+  .site-header .nav-cta{
+    min-width:140px;
+  }
+
+  .site-header .nav-profile{
+    min-width:168px;
+    max-width:168px;
+  }
+}
+
