@@ -1224,3 +1224,91 @@ html[dir="rtl"] .hero-media.hero-video::after{
   background:rgba(0,0,0,.32) !important;
 }
 
+
+
+/* CLIENT LOGO MARQUEE */
+.client-ticker{
+  background:#0e1115;
+  border-block:1px solid var(--line);
+  overflow:hidden;
+  height:92px;
+  display:flex;
+  align-items:center;
+}
+
+.client-ticker-track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  animation:clientLogoTicker 34s linear infinite;
+  will-change:transform;
+}
+
+.client-logo-item{
+  position:relative;
+  width:180px;
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 26px;
+  flex:0 0 auto;
+}
+
+.client-logo-item img{
+  display:block;
+  max-width:125px;
+  max-height:54px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:grayscale(1) brightness(2.2);
+  opacity:.78;
+  transition:
+    filter .3s ease,
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.client-logo-item:hover img{
+  filter:none;
+  opacity:1;
+  transform:scale(1.08);
+}
+
+.client-logo-item::after{
+  content:"◆";
+  position:absolute;
+  inset-inline-end:-4px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--red);
+  font-size:.58rem;
+}
+
+@keyframes clientLogoTicker{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+html[dir="rtl"] .client-ticker-track{
+  direction:ltr;
+}
+
+@media(max-width:720px){
+  .client-ticker{
+    height:76px;
+  }
+
+  .client-logo-item{
+    width:140px;
+    height:74px;
+    padding:12px 20px;
+  }
+
+  .client-logo-item img{
+    max-width:100px;
+    max-height:44px;
+  }
+}
+
