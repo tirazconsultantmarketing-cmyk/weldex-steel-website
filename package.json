@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tirazconsultantmarketing-cmyk/weldex-steel-website#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
     "formidable": "^3.5.4",
     "nodemailer": "^10.0.15"
   }
