@@ -1421,3 +1421,93 @@ html[dir="rtl"] .client-ticker .client-logo-item::after{
   }
 }
 
+
+/* ===== CLIENT TICKER FINAL BALANCE ===== */
+
+.client-ticker{
+  height:72px !important;
+  min-height:72px !important;
+  max-height:72px !important;
+  background:#0e1115 !important;
+}
+
+.client-ticker .client-ticker-track{
+  height:72px !important;
+  min-height:72px !important;
+  max-height:72px !important;
+  display:flex !important;
+  align-items:center !important;
+}
+
+.client-ticker .client-logo-item{
+  width:170px !important;
+  min-width:170px !important;
+  max-width:170px !important;
+  height:72px !important;
+  min-height:72px !important;
+  max-height:72px !important;
+  flex:0 0 170px !important;
+  padding:0 24px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+.client-ticker .client-logo-item img{
+  width:auto !important;
+  height:auto !important;
+  max-width:122px !important;
+  max-height:42px !important;
+  object-fit:contain !important;
+
+  filter:none !important;
+  opacity:1 !important;
+
+  background:rgba(255,255,255,.96) !important;
+  padding:8px 12px !important;
+  border-radius:4px !important;
+  box-sizing:content-box !important;
+
+  transition:transform .25s ease, box-shadow .25s ease !important;
+}
+
+.client-ticker .client-logo-item:hover img{
+  transform:scale(1.06) !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.28) !important;
+}
+
+.client-ticker .client-logo-item::after{
+  content:"◆" !important;
+  position:absolute !important;
+  right:-3px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  color:var(--red) !important;
+  font-size:8px !important;
+}
+
+@media(max-width:720px){
+  .client-ticker,
+  .client-ticker .client-ticker-track{
+    height:64px !important;
+    min-height:64px !important;
+    max-height:64px !important;
+  }
+
+  .client-ticker .client-logo-item{
+    width:145px !important;
+    min-width:145px !important;
+    max-width:145px !important;
+    height:64px !important;
+    min-height:64px !important;
+    max-height:64px !important;
+    flex-basis:145px !important;
+  }
+
+  .client-ticker .client-logo-item img{
+    max-width:105px !important;
+    max-height:36px !important;
+    padding:7px 10px !important;
+  }
+}
+
