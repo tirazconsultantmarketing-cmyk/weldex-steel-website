@@ -1924,3 +1924,153 @@ html[dir="rtl"] .inner-hero .bg::after{
   }
 }
 
+
+/* =========================================================
+   FINAL INNER HERO — ALL PAGES / EN + AR
+   Full viewport image + minimal fade
+   ========================================================= */
+
+body .inner-hero{
+  position:relative !important;
+  width:100% !important;
+  min-height:58vh !important;
+  padding:170px 0 65px !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  overflow:hidden !important;
+  background:#0b0d10 !important;
+}
+
+/* Force the image layer to fill the FULL browser width */
+body .inner-hero > .bg{
+  position:absolute !important;
+  top:0 !important;
+  bottom:0 !important;
+
+  left:50% !important;
+  right:auto !important;
+
+  width:100vw !important;
+  height:100% !important;
+
+  transform:translateX(-50%) !important;
+
+  overflow:hidden !important;
+  z-index:0 !important;
+}
+
+/* Actual image */
+body .inner-hero > .bg > img{
+  position:absolute !important;
+  inset:0 !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  max-width:none !important;
+
+  object-fit:cover !important;
+  object-position:50% 50% !important;
+
+  filter:none !important;
+  opacity:1 !important;
+  transform:none !important;
+}
+
+/* Very light fade only */
+body .inner-hero > .bg::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,7,9,.25) 0%,
+      rgba(5,7,9,.14) 35%,
+      rgba(5,7,9,.04) 68%,
+      rgba(5,7,9,.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5,7,9,.20) 0%,
+      transparent 38%
+    ) !important;
+}
+
+/* Reverse emphasis for Arabic */
+html[dir="rtl"] body .inner-hero > .bg::after{
+  background:
+    linear-gradient(
+      270deg,
+      rgba(5,7,9,.25) 0%,
+      rgba(5,7,9,.14) 35%,
+      rgba(5,7,9,.04) 68%,
+      rgba(5,7,9,.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5,7,9,.20) 0%,
+      transparent 38%
+    ) !important;
+}
+
+/* Text stays above image */
+body .inner-hero > .container{
+  position:relative !important;
+  z-index:5 !important;
+}
+
+/* Readability without darkening the whole image */
+body .inner-hero h1{
+  text-shadow:
+    0 3px 15px rgba(0,0,0,.65),
+    0 1px 4px rgba(0,0,0,.85) !important;
+}
+
+body .inner-hero p{
+  color:#fff !important;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.90) !important;
+}
+
+body .inner-hero .breadcrumb{
+  color:#e4e7eb !important;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.95) !important;
+}
+
+/* Desktop */
+@media(min-width:1051px){
+  body .inner-hero > .bg > img{
+    object-position:center center !important;
+  }
+}
+
+/* Tablet */
+@media(min-width:721px) and (max-width:1050px){
+  body .inner-hero{
+    min-height:55vh !important;
+    padding:150px 0 58px !important;
+  }
+}
+
+/* Mobile */
+@media(max-width:720px){
+  body .inner-hero{
+    min-height:52vh !important;
+    padding:135px 0 50px !important;
+  }
+
+  body .inner-hero > .bg > img{
+    object-position:center center !important;
+  }
+
+  body .inner-hero > .bg::after,
+  html[dir="rtl"] body .inner-hero > .bg::after{
+    background:rgba(5,7,9,.18) !important;
+  }
+}
+
